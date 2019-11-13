@@ -4,11 +4,13 @@ cache: bundler
 bundler_args: --without development
 
 rvm:
-  - ruby-head
   - 2.6
   - 2.5
   - 2.4
   - jruby
+matrix:
+  allow_failures:
+    - rvm: ruby-head
 
 services:
   - docker
