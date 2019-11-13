@@ -9,9 +9,6 @@ rvm:
   - 2.5
   - 2.4
   - jruby
-jobs:
-  allow_failures:
-    - rvm: ruby-head
 
 services:
   - docker
@@ -20,6 +17,8 @@ install: make install
 script: make test
 
 matrix:
+  allow_failures:
+    - rvm: ruby-head
   fast_finish: true
 
 deploy:
